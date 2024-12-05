@@ -1,4 +1,3 @@
-import 'package:alrahala_commecre/features/info/Presentation/info_view.dart';
 import 'package:alrahala_commecre/features/support/Presentation/widgets/stack_item_support.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,14 +18,14 @@ class supportViewBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               stackItemSupport(
-                onTap: _launchWhatsApp,
+                onTap:() => _launchWhatsApp(phoneNumber: '218915511445'),
                 textSupport: ' الدعم الفني',
                 iconSupport: FontAwesomeIcons.whatsapp,
               ),
               stackItemSupport(
-                onTap: () => Navigator.pushNamed(context,infoView.id),
-                textSupport: 'حول التطبيق',
-                iconSupport: Icons.info,
+                onTap: () => _launchURL(url: 'https://rhalla.online/'),
+                textSupport: 'موقعنا الالكتروني',
+                iconSupport: Icons.travel_explore,
               ),
             ],
           ),
@@ -34,14 +33,20 @@ class supportViewBody extends StatelessWidget {
       ],
     );
   }
- final String phoneNumber = '218910690833';
 
-  Future<void> _launchWhatsApp() async {
+  Future<void> _launchWhatsApp({required String phoneNumber}) async {
     final Uri url = Uri.parse('https://wa.me/$phoneNumber');
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
       print('Could not launch $url');
+    }
+  }
+  Future<void> _launchURL({required String url}) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
     }
   }
   }

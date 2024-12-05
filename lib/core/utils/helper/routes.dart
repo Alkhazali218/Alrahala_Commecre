@@ -1,6 +1,5 @@
 import 'package:alrahala_commecre/features/account%20statement/Presentation/account_statement_view.dart';
 import 'package:alrahala_commecre/features/home/Presentation/home_view.dart';
-import 'package:alrahala_commecre/features/info/Presentation/info_view.dart';
 import 'package:alrahala_commecre/features/login/Presentation/login_view.dart';
 import 'package:alrahala_commecre/features/money%20transfer/Presentation/money_transfer_view.dart';
 import 'package:alrahala_commecre/features/next%20ex/Presentation/next_ex_view.dart';
@@ -30,7 +29,6 @@ Map<String, Widget Function(BuildContext)> routes = {
   screenView.id: (context) => const screenView(),
   StackUserViewBasic.id: (context) => const StackUserViewBasic(),
   StackUserViewStar.id: (context) => const StackUserViewStar(),
-  infoView.id: (context) => const infoView(),
   nextView.id: (context) => const nextView(),
   NextExView.id:  (context) => const NextExView(),
   AccountStatementView.id: (context) => const AccountStatementView(),
