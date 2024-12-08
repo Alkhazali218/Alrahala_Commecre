@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "776230994079",
+    "project_id": "alrahala-da896",
+    "storage_bucket": "alrahala-da896.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776230994079:android:3cb63c8ebff30061f222aa",
+        "android_client_info": {
+          "package_name": "com.example.alrahala_commecre"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu2a-j5oqMJkkCgjTAwQ5VP4qeYn_61o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
