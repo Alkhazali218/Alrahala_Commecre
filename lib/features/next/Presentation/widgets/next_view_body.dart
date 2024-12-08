@@ -28,6 +28,14 @@ class nextViewBody extends StatelessWidget {
             isSecurePassword: false,
           ),
           const SizedBox(height: 15),
+
+           const SizedBox(height: 15),
+          textFromFiledItem(
+            hintText: 'كود التحقق',
+            prefixIcon: FontAwesomeIcons.hashtag,
+            pass: false,
+            isSecurePassword: false,
+          ),
           
           textFromFiledItem(
             hintText: 'المدينة',

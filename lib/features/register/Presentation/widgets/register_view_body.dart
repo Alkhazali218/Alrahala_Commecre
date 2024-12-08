@@ -36,21 +36,22 @@ class registerViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           textFromFiledItem(
-            hintText: 'رقم الهاتف',
-            prefixIcon: FontAwesomeIcons.hashtag,
+            hintText: 'البريد الالكتروني',
+            prefixIcon: FontAwesomeIcons.envelope,
             pass: false,
             isSecurePassword: false,
           ),
           const SizedBox(height: 20),
-          textFromFiledItem(
-            hintText: 'كلمة المرور',
+           textFromFiledItem(
+            hintText: 'كلمة السر',
             prefixIcon: Icons.password,
             pass: true,
             isSecurePassword: true,
           ),
+
           const SizedBox(height: 30),
           ButtonItem(
-            textButton: 'انشاء حساب جديد',
+            textButton: 'انشاء حساب',
             onTap: () => Navigator.pushNamed(context, homeView.id),
           ),
           const SizedBox(height: 20),

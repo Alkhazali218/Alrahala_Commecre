@@ -32,8 +32,8 @@ class LoginViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 50),
           textFromFiledItem(
-            hintText: 'رقم الهاتف',
-            prefixIcon: FontAwesomeIcons.hashtag,
+            hintText: 'البريد الالكتروني',
+            prefixIcon: FontAwesomeIcons.envelope,
             pass: false,
             isSecurePassword: false,
           ),
