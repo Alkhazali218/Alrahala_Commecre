@@ -2,12 +2,16 @@ import 'package:alrahala_commecre/core/utils/helper/constant.dart';
 import 'package:alrahala_commecre/core/utils/helper/routes.dart';
 import 'package:alrahala_commecre/features/login/Presentation/login_view.dart';
 import 'package:alrahala_commecre/features/splash/Presentation/splash_view.dart';
+import 'package:alrahala_commecre/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   bool isFirstLaunch = await checkFirstLaunch();
 
   runApp(MyApp(isFirstLaunch: isFirstLaunch));
