@@ -15,3 +15,12 @@ TextStyle googleFont30 = GoogleFonts.notoSansArabic(
   color: Colors.black45,
   fontSize: 18,
   );
+
+  void showSnackBar(BuildContext context, String message, Color showColor) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(message),
+      backgroundColor: showColor,
+    ),
+  );
+}

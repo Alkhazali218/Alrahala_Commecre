@@ -9,18 +9,20 @@ class userViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return  
-   ListView(
-    children: [
-     const  SizedBox(height: 40),
-    const  stackItemUser(),
-   const  SizedBox(height: 20),
-      Text('تسجيل الخروج',
-      style: googleFont30.copyWith(color: kpColor, fontSize: 16),
-      textAlign: TextAlign.center,
-      ),
-    ],
-   );
+    return ListView(
+      children: [
+        const SizedBox(height: 40),
+        const stackItemUser(),
+        const SizedBox(height: 20),
+        GestureDetector(
+          onTap: () {},
+          child: Text(
+            'تسجيل الخروج',
+            style: googleFont30.copyWith(color: kpColor, fontSize: 16),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
+    );
   }
-
 }

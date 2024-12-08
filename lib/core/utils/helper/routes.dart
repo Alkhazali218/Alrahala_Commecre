@@ -14,10 +14,6 @@ import 'package:alrahala_commecre/features/support/Presentation/support_view.dar
 import 'package:alrahala_commecre/features/user/Presentation/user_view.dart';
 import 'package:flutter/material.dart';
 
-
-
-
-
 Map<String, Widget Function(BuildContext)> routes = {
   splashView.id: (context) => splashView(),
   loginView.id: (context) => const loginView(),
@@ -30,8 +26,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   StackUserViewBasic.id: (context) => const StackUserViewBasic(),
   StackUserViewStar.id: (context) => const StackUserViewStar(),
   nextView.id: (context) => const nextView(),
-  NextExView.id:  (context) => const NextExView(),
+  NextExView.id: (context) => const NextExView(),
   AccountStatementView.id: (context) => const AccountStatementView(),
   MoneyTransferView.id: (context) => const MoneyTransferView(),
-  
 };

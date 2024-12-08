@@ -4,13 +4,20 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class stackItem extends StatelessWidget {
-const stackItem({super.key,required this.icons,required this.textProject,required this.textInside1,required this.textInside2,required this.onTap});
+  const stackItem({
+    super.key,
+    required this.icons,
+    required this.textProject,
+    required this.textInside1,
+    required this.textInside2,
+    required this.onTap,
+  });
 
-final  IconData icons;
-final  String textProject;
-final  String textInside1;
-final  String textInside2;
-final  VoidCallback onTap;
+  final IconData icons;
+  final String textProject;
+  final String textInside1;
+  final String textInside2;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -38,7 +45,7 @@ final  VoidCallback onTap;
               child: Column(
                 children: [
                   const SizedBox(height: 30),
-                   Icon(icons, color: kpColor, size: 40),
+                  Icon(icons, color: kpColor, size: 40),
                   const SizedBox(height: 10),
                   Text(
                     textProject,
@@ -50,16 +57,16 @@ final  VoidCallback onTap;
                     children: [
                       Text(
                         textInside1,
-                        style: googleFont30.copyWith(fontSize: 15,
-                        color: Colors.black54,
+                        style: googleFont30.copyWith(
+                          fontSize: 15,
+                          color: Colors.black54,
                         ),
-                        
                       ),
-                       Text(
+                      Text(
                         textInside2,
-                        style: googleFont18.copyWith(fontSize: 15,
-                        color: Colors.black54,
-                        
+                        style: googleFont18.copyWith(
+                          fontSize: 15,
+                          color: Colors.black54,
                         ),
                       ),
                     ],
@@ -72,5 +79,4 @@ final  VoidCallback onTap;
       ),
     );
   }
-
 }

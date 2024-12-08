@@ -24,13 +24,16 @@ class stackItemUser extends StatelessWidget {
             ),
           ),
         ),
-       const Positioned.fill(
+        const Positioned.fill(
           child: Align(
             alignment: Alignment.center,
-            child: CloumItemUser(),
+            child: CloumItemUser(
+              text: 'الرصيد الحالي',
+              textMoney: '20,250,098',
+            ),
           ),
         ),
       ],
     );
   }
-}  
+}

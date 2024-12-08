@@ -5,20 +5,22 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class CloumItemUser extends StatelessWidget {
-  const CloumItemUser({super.key});
+  const CloumItemUser({super.key,required this.text,required this.textMoney});
 
+  final String text;
+  final String textMoney;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const SizedBox(height: 20),
         Text(
-          'الرصيد الحالي',
+          text,
           style: googleFont30.copyWith(color: Colors.black87, fontSize: 16),
         ),
         const SizedBox(height: 5),
         Text(
-          '20,250,098',
+          textMoney,
           style: googleFont30.copyWith(color: kpColor),
         ),
         const SizedBox(height: 20),

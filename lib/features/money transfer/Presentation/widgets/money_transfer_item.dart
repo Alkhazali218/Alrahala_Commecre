@@ -5,14 +5,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // ignore: camel_case_types
 class moneyTransferItem extends StatelessWidget {
-  const moneyTransferItem({super.key});
+  const moneyTransferItem({super.key,required this.text,required this.onTap});
 
+  final String text;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-   return Row(
-        children: [
-          const SizedBox(width: 10),
-          Container(
+    return Row(
+      children: [
+        const SizedBox(width: 10),
+        Container(
           width: 120,
           height: 65,
           decoration: BoxDecoration(
@@ -24,17 +26,24 @@ class moneyTransferItem extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                 Text('تحويل القيمة',
-                 style: googleFont30.copyWith(fontSize: 13,color: kprimaryColor,fontWeight: FontWeight.bold),
-                 
-                 ),
-                const Icon(FontAwesomeIcons.plus,size: 14,color: kprimaryColor),
+                GestureDetector(
+                  onTap: onTap,
+                  child: Text(
+                    text,
+                    style: googleFont30.copyWith(
+                        fontSize: 13,
+                        color: kprimaryColor,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const Icon(FontAwesomeIcons.plus,
+                    size: 14, color: kprimaryColor),
               ],
             ),
           ),
-         ),
+        ),
         const SizedBox(height: 100),
-        ],
-       );
+      ],
+    );
   }
 }

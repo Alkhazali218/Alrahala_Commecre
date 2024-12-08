@@ -5,11 +5,14 @@ class MoneyTransferViewBody extends StatelessWidget {
   const MoneyTransferViewBody({super.key});
   @override
   Widget build(BuildContext context) {
-   return const Column(
-    mainAxisAlignment: MainAxisAlignment.end,
-     children: [
-       moneyTransferItem(),
-     ],
-   );
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        moneyTransferItem(
+          text: 'تحويل القيمة',
+          onTap: () {},
+        ),
+      ],
+    );
   }
 }
