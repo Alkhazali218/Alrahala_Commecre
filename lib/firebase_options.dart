@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'alrahala-da896.firebasestorage.app',
     measurementId: 'G-1SJL0XGFD8',
   );
+
 }

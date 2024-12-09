@@ -9,11 +9,13 @@ class textFromFiledItem extends StatefulWidget {
       required this.prefixIcon,
       required this.pass,
       required this.isSecurePassword,
+      required this.controller,
       });
 final  String hintText;
 final  IconData prefixIcon;
 final  bool pass;
  bool isSecurePassword;
+final TextEditingController controller;
 
   @override
   State<StatefulWidget> createState() {
@@ -28,6 +30,7 @@ class _textFromFiledItemState extends State<textFromFiledItem> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: TextField(
+        controller: widget.controller,
         textAlign: TextAlign.right,
         obscureText: widget.isSecurePassword,
         decoration: InputDecoration(

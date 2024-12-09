@@ -4,9 +4,10 @@ import 'package:alrahala_commecre/features/stack%20user%20basic/Presentation/sta
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+// ignore: must_be_immutable
 class NextExViewBody extends StatelessWidget {
-  const NextExViewBody({super.key});
-
+ NextExViewBody({super.key});
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,6 +16,7 @@ class NextExViewBody extends StatelessWidget {
         children: [
           const SizedBox(height: 60),
           textFromFiledItem(
+            controller: controller,
             hintText: 'الاسم المستلم',
             prefixIcon: FontAwesomeIcons.user,
             pass: false,
@@ -22,6 +24,7 @@ class NextExViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           textFromFiledItem(
+            controller: controller,
             hintText: 'رقم الهاتف المستلم',
             prefixIcon: FontAwesomeIcons.hashtag,
             pass: false,
@@ -30,6 +33,7 @@ class NextExViewBody extends StatelessWidget {
           
           const SizedBox(height: 15),
           textFromFiledItem(
+            controller: controller,
             hintText: 'المدينة',
             prefixIcon: FontAwesomeIcons.treeCity,
             pass: false,
@@ -38,6 +42,7 @@ class NextExViewBody extends StatelessWidget {
           const SizedBox(height: 15),
           
            textFromFiledItem(
+            controller: controller,
             hintText: 'الدولة',
             prefixIcon: FontAwesomeIcons.earthAfrica,
             pass: false,
@@ -45,6 +50,7 @@ class NextExViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           textFromFiledItem(
+            controller: controller,
             hintText: 'القيمة المراد ارسالها',
             prefixIcon: FontAwesomeIcons.dollarSign,
             pass: false,
@@ -52,6 +58,7 @@ class NextExViewBody extends StatelessWidget {
           ),
            const SizedBox(height: 15),
           textFromFiledItem(
+            controller: controller,
             hintText: 'العملة',
             prefixIcon: FontAwesomeIcons.dollarSign,
             pass: false,

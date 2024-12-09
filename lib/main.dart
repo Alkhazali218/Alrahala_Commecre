@@ -1,10 +1,12 @@
 import 'package:alrahala_commecre/core/utils/helper/constant.dart';
 import 'package:alrahala_commecre/core/utils/helper/routes.dart';
+import 'package:alrahala_commecre/cubit/Auth%20cubit/Auth_cubit.dart';
 import 'package:alrahala_commecre/features/login/Presentation/login_view.dart';
 import 'package:alrahala_commecre/features/splash/Presentation/splash_view.dart';
 import 'package:alrahala_commecre/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -34,11 +36,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(scaffoldBackgroundColor: kprimaryColor),
-      routes: routes,
-      initialRoute: isFirstLaunch ? splashView.id : loginView.id,
+    return MultiBlocProvider(
+      providers:[
+        BlocProvider(create:(context) => AuthCubit()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(scaffoldBackgroundColor: kprimaryColor),
+        routes: routes,
+        initialRoute: isFirstLaunch ? splashView.id : loginView.id,
+      ),
     );
   }
 }

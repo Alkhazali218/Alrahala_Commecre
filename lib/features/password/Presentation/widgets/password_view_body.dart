@@ -5,9 +5,11 @@ import 'package:alrahala_commecre/features/verification/Presentation/verificatio
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-// ignore: camel_case_types
+
+// ignore: must_be_immutable, camel_case_types
 class passwordViewBody extends StatelessWidget {
-  const passwordViewBody({super.key});
+ passwordViewBody({super.key});
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,6 +27,7 @@ class passwordViewBody extends StatelessWidget {
           ),
           const  SizedBox(height: 20),
           textFromFiledItem(
+            controller: controller,
             hintText: 'رقم الهاتف',
              prefixIcon: FontAwesomeIcons.hashtag,
               pass: false,

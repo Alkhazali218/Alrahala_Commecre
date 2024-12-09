@@ -7,7 +7,7 @@ class loginView extends StatelessWidget {
   static String id = 'login View';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: LoginViewBody(),
     );
   }

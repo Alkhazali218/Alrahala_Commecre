@@ -4,9 +4,11 @@ import 'package:alrahala_commecre/features/stack%20user%20basic/Presentation/sta
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-// ignore: camel_case_types
+
+// ignore: must_be_immutable, camel_case_types
 class nextViewBody extends StatelessWidget {
-  const nextViewBody({super.key});
+ nextViewBody({super.key});
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,6 +17,7 @@ class nextViewBody extends StatelessWidget {
         children: [
           const SizedBox(height: 40),
           textFromFiledItem(
+            controller: controller,
             hintText: 'الاسم المستلم',
             prefixIcon: FontAwesomeIcons.user,
             pass: false,
@@ -22,6 +25,7 @@ class nextViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           textFromFiledItem(
+            controller: controller,
             hintText: 'رقم الهاتف المستلم',
             prefixIcon: FontAwesomeIcons.hashtag,
             pass: false,
@@ -31,6 +35,7 @@ class nextViewBody extends StatelessWidget {
 
            const SizedBox(height: 15),
           textFromFiledItem(
+            controller: controller,
             hintText: 'كود التحقق',
             prefixIcon: FontAwesomeIcons.hashtag,
             pass: false,
@@ -38,6 +43,7 @@ class nextViewBody extends StatelessWidget {
           ),
           
           textFromFiledItem(
+            controller: controller,
             hintText: 'المدينة',
             prefixIcon: FontAwesomeIcons.treeCity,
             pass: false,
@@ -45,6 +51,7 @@ class nextViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           textFromFiledItem(
+            controller: controller,
             hintText: 'القيمة المراد ارسالها',
             prefixIcon: FontAwesomeIcons.dollarSign,
             pass: false,
