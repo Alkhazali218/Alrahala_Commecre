@@ -11,12 +11,14 @@ class stackItem extends StatelessWidget {
     required this.textInside1,
     required this.textInside2,
     required this.onTap,
+    required this.textInside3,
   });
 
   final IconData icons;
   final String textProject;
   final String textInside1;
   final String textInside2;
+  final String textInside3;
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,16 @@ class stackItem extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
+                 const SizedBox(height: 30),
+                  Text(
+                    textAlign: TextAlign.right,
+                    textInside3,
+                    style: googleFont18.copyWith(
+                      fontSize: 15,
+                      color: Colors.black54,
+                    ),
+                  ),
                 ],
               ),
             ),

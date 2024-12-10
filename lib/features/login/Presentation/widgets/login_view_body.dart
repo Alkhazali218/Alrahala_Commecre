@@ -21,19 +21,21 @@ class LoginViewBody extends StatelessWidget {
   TextEditingController password = TextEditingController();
 
   bool isLoading = false;
+  GlobalKey<FormState> fromKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is loadingState) {
+        if (state is AuthLoading) {
           isLoading = true;
         }
-        if (state is sucessState) {
-          Navigator.pushNamed(context, homeView.id);
+        if (state is AuthSucess) {
+          // BlocProvider.of<chatCubit>(context).getMessages();
+          Navigator.pushNamed(context, homeView.id,arguments: email);
           isLoading = false;
         }
-        if (state is errorState) {
+        if (state is AuthError) {
           showSnackBar(context, state.message, Colors.red);
           isLoading = false;
         }
@@ -46,63 +48,68 @@ class LoginViewBody extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.all(10),
-            child: ListView(
-              children: [
-                Image.asset(assets.klogo, height: 150),
-                Text(
-                  ' ! مرحبا بك',
-                  textAlign: TextAlign.right,
-                  style: googleFont30,
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  'قم بتسجيل الدخول للاستمرار',
-                  textAlign: TextAlign.right,
-                  style: googleFont18,
-                ),
-                const SizedBox(height: 50),
-                textFromFiledItem(
-                  controller: email,
-                  hintText: 'البريد الالكتروني',
-                  prefixIcon: FontAwesomeIcons.envelope,
-                  pass: false,
-                  isSecurePassword: false,
-                ),
-                const SizedBox(height: 20),
-                textFromFiledItem(
-                  controller: password,
-                  hintText: 'كلمة المرور',
-                  prefixIcon: Icons.password,
-                  pass: true,
-                  isSecurePassword: true,
-                ),
-                const SizedBox(height: 30),
-                ButtonItem(
-                  textButton: 'تسجيل الدخول',
-                  onTap: () {
-                    BlocProvider.of<AuthCubit>(context)
-                        .login(email: email.text, password: password.text);
-                  },
-                ),
-                const SizedBox(height: 20),
-                GestureDetector(
-                  onTap: () => Navigator.pushNamed(context, passwordView.id),
-                  child: Text(
-                    'هل نسيت كلمة السر؟',
-                    textAlign: TextAlign.center,
-                    style: googleFont18.copyWith(
-                      color: kpColor,
-                      fontSize: 14,
+            child: Form(
+              key: fromKey,
+              child: ListView(
+                children: [
+                  Image.asset(assets.klogo, height: 150),
+                  Text(
+                    ' ! مرحبا بك',
+                    textAlign: TextAlign.right,
+                    style: googleFont30,
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    'قم بتسجيل الدخول للاستمرار',
+                    textAlign: TextAlign.right,
+                    style: googleFont18,
+                  ),
+                  const SizedBox(height: 50),
+                  textFromFiledItem(
+                    controller: email,
+                    hintText: 'البريد الالكتروني',
+                    prefixIcon: FontAwesomeIcons.envelope,
+                    pass: false,
+                    isSecurePassword: false,
+                  ),
+                  const SizedBox(height: 20),
+                  textFromFiledItem(
+                    controller: password,
+                    hintText: 'كلمة المرور',
+                    prefixIcon: Icons.password,
+                    pass: true,
+                    isSecurePassword: true,
+                  ),
+                  const SizedBox(height: 30),
+                  ButtonItem(
+                    textButton: 'تسجيل الدخول',
+                    onTap: () {
+                      if (fromKey.currentState!.validate()) {
+                        BlocProvider.of<AuthCubit>(context)
+                            .login(email: email.text, password: password.text);
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, passwordView.id),
+                    child: Text(
+                      'هل نسيت كلمة السر؟',
+                      textAlign: TextAlign.center,
+                      style: googleFont18.copyWith(
+                        color: kpColor,
+                        fontSize: 14,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 30),
-                buttonTextItem(
-                  ifText: ' ليس لديك حساب؟',
-                  textLandtextR: 'انشاء حساب',
-                  onTap: () => Navigator.pushNamed(context, registerView.id),
-                ),
-              ],
+                  const SizedBox(height: 30),
+                  buttonTextItem(
+                    ifText: ' ليس لديك حساب؟',
+                    textLandtextR: 'انشاء حساب',
+                    onTap: () => Navigator.pushNamed(context, registerView.id),
+                  ),
+                ],
+              ),
             ),
           ),
         );

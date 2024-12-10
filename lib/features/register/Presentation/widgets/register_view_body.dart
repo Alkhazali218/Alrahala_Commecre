@@ -22,14 +22,14 @@ class registerViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is loadingState) {
+        if (state is AuthLoading) {
           isLoading = true;
         }
-        if (state is sucessState) {
+        if (state is AuthSucess) {
           Navigator.pushNamed(context, homeView.id);
           isLoading = false;
         }
-        if (state is errorState) {
+        if (state is AuthError) {
           showSnackBar(context, state.message, Colors.red);
           isLoading = false;
         }

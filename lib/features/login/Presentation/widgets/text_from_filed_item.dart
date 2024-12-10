@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class textFromFiledItem extends StatefulWidget {
-  textFromFiledItem(
-      {super.key,
-      required this.hintText,
-      required this.prefixIcon,
-      required this.pass,
-      required this.isSecurePassword,
-      required this.controller,
-      });
-final  String hintText;
-final  IconData prefixIcon;
-final  bool pass;
- bool isSecurePassword;
-final TextEditingController controller;
+  textFromFiledItem({
+    super.key,
+    required this.hintText,
+    required this.prefixIcon,
+    required this.pass,
+    required this.isSecurePassword,
+    required this.controller,
+  });
+  final String hintText;
+  final IconData prefixIcon;
+  final bool pass;
+  bool isSecurePassword;
+  final TextEditingController controller;
 
   @override
   State<StatefulWidget> createState() {
@@ -29,7 +29,13 @@ class _textFromFiledItemState extends State<textFromFiledItem> {
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'رجاءا ادخل البيانات';
+          }
+          return null;
+        },
         controller: widget.controller,
         textAlign: TextAlign.right,
         obscureText: widget.isSecurePassword,
@@ -55,7 +61,7 @@ class _textFromFiledItemState extends State<textFromFiledItem> {
     return IconButton(
       onPressed: () {
         setState(() {
-          widget.isSecurePassword =! widget.isSecurePassword;
+          widget.isSecurePassword = !widget.isSecurePassword;
         });
       },
       icon: widget.isSecurePassword

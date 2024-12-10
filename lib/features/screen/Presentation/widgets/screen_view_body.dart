@@ -19,6 +19,7 @@ class screenViewBody extends StatelessWidget {
           textProject: 'الخدمات الاساسية',
           textInside1: 'الحوالات الخارجية',
           textInside2: 'الحوالات الداخلية',
+          textInside3: '',
         ),
         stackItem(
           onTap: () => Navigator.pushNamed(context,StackUserViewStar.id),
@@ -26,6 +27,7 @@ class screenViewBody extends StatelessWidget {
           textProject: 'الخدمات المميزة',
           textInside1: 'تحويل الاموال',
           textInside2: 'كشف الحساب',
+          textInside3: 'دردشة المستخدمين',
         ),
       ],
     );

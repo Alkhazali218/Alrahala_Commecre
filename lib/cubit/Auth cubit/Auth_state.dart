@@ -1,17 +1,17 @@
 abstract class AuthState {}
 
 // ignore: camel_case_types
-class initialState extends AuthState {}
+class AuthInitial extends AuthState {}
 
 // ignore: camel_case_types
-class loadingState extends AuthState {}
+class AuthLoading extends AuthState {}
 
 // ignore: camel_case_types
-class sucessState extends AuthState {}
+class AuthSucess extends AuthState {}
 
 // ignore: camel_case_types
-class errorState extends AuthState {
+class AuthError extends AuthState {
   String message;
 
-  errorState({required this.message});
+  AuthError({required this.message});
 }
