@@ -6,8 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // ignore: must_be_immutable
 class NextExViewBody extends StatelessWidget {
- NextExViewBody({super.key});
-  TextEditingController controller = TextEditingController();
+const NextExViewBody({super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +15,9 @@ class NextExViewBody extends StatelessWidget {
         children: [
           const SizedBox(height: 60),
           textFromFiledItem(
-            controller: controller,
+             onChanged: (p0) {
+              
+            },
             hintText: 'الاسم المستلم',
             prefixIcon: FontAwesomeIcons.user,
             pass: false,
@@ -24,7 +25,9 @@ class NextExViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           textFromFiledItem(
-            controller: controller,
+            onChanged: (p0) {
+              
+            },
             hintText: 'رقم الهاتف المستلم',
             prefixIcon: FontAwesomeIcons.hashtag,
             pass: false,
@@ -33,7 +36,9 @@ class NextExViewBody extends StatelessWidget {
           
           const SizedBox(height: 15),
           textFromFiledItem(
-            controller: controller,
+             onChanged: (p0) {
+              
+            },
             hintText: 'المدينة',
             prefixIcon: FontAwesomeIcons.treeCity,
             pass: false,
@@ -42,7 +47,9 @@ class NextExViewBody extends StatelessWidget {
           const SizedBox(height: 15),
           
            textFromFiledItem(
-            controller: controller,
+             onChanged: (p0) {
+              
+            },
             hintText: 'الدولة',
             prefixIcon: FontAwesomeIcons.earthAfrica,
             pass: false,
@@ -50,7 +57,9 @@ class NextExViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           textFromFiledItem(
-            controller: controller,
+            onChanged: (p0) {
+              
+            },
             hintText: 'القيمة المراد ارسالها',
             prefixIcon: FontAwesomeIcons.dollarSign,
             pass: false,
@@ -58,7 +67,9 @@ class NextExViewBody extends StatelessWidget {
           ),
            const SizedBox(height: 15),
           textFromFiledItem(
-            controller: controller,
+             onChanged: (p0) {
+              
+            },
             hintText: 'العملة',
             prefixIcon: FontAwesomeIcons.dollarSign,
             pass: false,

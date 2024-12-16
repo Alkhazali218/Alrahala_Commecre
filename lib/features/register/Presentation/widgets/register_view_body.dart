@@ -58,7 +58,9 @@ class registerViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
                 textFromFiledItem(
-                  controller: userName,
+                   onChanged: (p0) {
+              
+            },
                   hintText: 'اسم المستخدم',
                   prefixIcon: FontAwesomeIcons.user,
                   pass: false,
@@ -66,7 +68,9 @@ class registerViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 textFromFiledItem(
-                  controller: email,
+                   onChanged: (p0) {
+              
+            },
                   hintText: 'البريد الالكتروني',
                   prefixIcon: FontAwesomeIcons.envelope,
                   pass: false,
@@ -74,7 +78,9 @@ class registerViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 textFromFiledItem(
-                  controller: password,
+                   onChanged: (p0) {
+              
+            },
                   hintText: 'كلمة السر',
                   prefixIcon: Icons.password,
                   pass: true,

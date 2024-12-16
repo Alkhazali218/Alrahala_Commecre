@@ -6,8 +6,7 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
   Future<void> register(
-      {required String email,
-      required String password}) async {
+      {required String email, required String password}) async {
     emit(AuthLoading());
     try {
       // ignore: unused_local_variable
@@ -24,30 +23,28 @@ class AuthCubit extends Cubit<AuthState> {
         emit(AuthError(message: 'الايميل مستخدم مسبقا'));
       }
     } catch (e) {
-      emit(AuthError(message:'{$e}'));
+      emit(AuthError(message: '{$e}'));
     }
   }
 
- Future<void> login({
-  required String email,
-  required String password,
-}) async {
-  emit(AuthLoading());
- try {
-  // ignore: unused_local_variable
-  final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-    email: email,
-    password: password
-  );
-  emit(AuthSucess());
-} on FirebaseAuthException catch (e) {
-  if (e.code == 'user-not-found') {
-    emit(AuthError(message: 'لم يتم عثور على حساب, رجاءا قم بانشاء حساب '));
-  } else if (e.code == 'wrong-password') {
-    emit(AuthError(message: 'لقد قمت بادخال بريد او كلمة سر خطا'));
-  }else {
-    emit(AuthError(message: 'لقد قمت بادخال بريد او كلمة سر خطا'));
+  Future<void> login({
+    required String email,
+    required String password,
+  }) async {
+    emit(AuthLoading());
+    try {
+      // ignore: unused_local_variable
+      final credential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      emit(AuthSucess());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        emit(AuthError(message: 'لم يتم عثور على حساب, رجاءا قم بانشاء حساب '));
+      } else if (e.code == 'wrong-password') {
+        emit(AuthError(message: 'لقد قمت بادخال بريد او كلمة سر خطا'));
+      } else {
+        emit(AuthError(message: 'لقد قمت بادخال بريد او كلمة سر خطا'));
+      }
+    }
   }
-}
-}
 }

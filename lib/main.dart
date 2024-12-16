@@ -1,6 +1,7 @@
 import 'package:alrahala_commecre/core/utils/helper/constant.dart';
 import 'package:alrahala_commecre/core/utils/helper/routes.dart';
 import 'package:alrahala_commecre/cubit/Auth%20cubit/Auth_cubit.dart';
+import 'package:alrahala_commecre/cubit/chat%20cubit/chat_cubit.dart';
 import 'package:alrahala_commecre/features/login/Presentation/login_view.dart';
 import 'package:alrahala_commecre/features/splash/Presentation/splash_view.dart';
 import 'package:alrahala_commecre/firebase_options.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers:[
         BlocProvider(create:(context) => AuthCubit()),
-        // BlocProvider(create:(context) => chatCubit()),
+        BlocProvider(create:(context) => ChatCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

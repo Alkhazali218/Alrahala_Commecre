@@ -8,8 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class passwordViewBody extends StatelessWidget {
- passwordViewBody({super.key});
-  TextEditingController controller = TextEditingController();
+ const passwordViewBody({super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +26,9 @@ class passwordViewBody extends StatelessWidget {
           ),
           const  SizedBox(height: 20),
           textFromFiledItem(
-            controller: controller,
+            onChanged: (p0) {
+              
+            },
             hintText: 'رقم الهاتف',
              prefixIcon: FontAwesomeIcons.hashtag,
               pass: false,

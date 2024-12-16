@@ -7,8 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class nextViewBody extends StatelessWidget {
- nextViewBody({super.key});
-  TextEditingController controller = TextEditingController();
+ const nextViewBody({super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +16,9 @@ class nextViewBody extends StatelessWidget {
         children: [
           const SizedBox(height: 40),
           textFromFiledItem(
-            controller: controller,
+            onChanged: (p0) {
+              
+            },
             hintText: 'الاسم المستلم',
             prefixIcon: FontAwesomeIcons.user,
             pass: false,
@@ -25,7 +26,9 @@ class nextViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           textFromFiledItem(
-            controller: controller,
+            onChanged: (p0) {
+              
+            },
             hintText: 'رقم الهاتف المستلم',
             prefixIcon: FontAwesomeIcons.hashtag,
             pass: false,
@@ -35,7 +38,9 @@ class nextViewBody extends StatelessWidget {
 
            const SizedBox(height: 15),
           textFromFiledItem(
-            controller: controller,
+            onChanged: (p0) {
+              
+            },
             hintText: 'كود التحقق',
             prefixIcon: FontAwesomeIcons.hashtag,
             pass: false,
@@ -43,7 +48,9 @@ class nextViewBody extends StatelessWidget {
           ),
           
           textFromFiledItem(
-            controller: controller,
+             onChanged: (p0) {
+              
+            },
             hintText: 'المدينة',
             prefixIcon: FontAwesomeIcons.treeCity,
             pass: false,
@@ -51,7 +58,9 @@ class nextViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           textFromFiledItem(
-            controller: controller,
+            onChanged: (p0) {
+              
+            },
             hintText: 'القيمة المراد ارسالها',
             prefixIcon: FontAwesomeIcons.dollarSign,
             pass: false,

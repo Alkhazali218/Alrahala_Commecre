@@ -52,7 +52,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCLu2a-j5oqMJkkCgjTAwQ5VP4qeYn_61o',
-    appId: '1:776230994079:android:3cb63c8ebff30061f222aa',
+    appId: '1:776230994079:android:675696b3631b5ff6f222aa',
     messagingSenderId: '776230994079',
     projectId: 'alrahala-da896',
     storageBucket: 'alrahala-da896.firebasestorage.app',
