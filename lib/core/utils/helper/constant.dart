@@ -10,5 +10,6 @@ const colorStack = Color(0xffB99470);
 const kMessagesCollections = 'messages';
 const kMessage = 'message';
 const kCreatedAt = 'createdAt';
+// ignore: constant_identifier_names
 const KUserId = 'UserId';
 

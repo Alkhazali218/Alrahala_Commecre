@@ -30,5 +30,5 @@ Map<String, Widget Function(BuildContext)> routes = {
   NextExView.id: (context) => const NextExView(),
   AccountStatementView.id: (context) => const AccountStatementView(),
   MoneyTransferView.id: (context) => const MoneyTransferView(),
-  chatView.id: (context) => chatView(),
+  chatView.id: (context) =>const chatView(),
 };

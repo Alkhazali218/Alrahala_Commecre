@@ -15,7 +15,7 @@ class nextView extends StatelessWidget {
         backgroundColor: kcolor,
        automaticallyImplyLeading: false,
       ),
-      body: nextViewBody(),
+      body:const nextViewBody(),
    );
   }
 }

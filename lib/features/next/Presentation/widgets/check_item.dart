@@ -27,5 +27,4 @@ class CheckItem extends StatelessWidget {
       ),
     );
   }
-
 }

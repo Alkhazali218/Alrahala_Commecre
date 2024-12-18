@@ -70,10 +70,12 @@ class chatViewBody extends StatelessWidget {
     );
   }
 
-  void _sendMessage(BuildContext context, String data, String email) {
+  void _sendMessage(BuildContext context, String data, String email) async {
     if (data.isNotEmpty) {
-      // إرسال الرسالة باستخدام الـ ChatCubit
-      BlocProvider.of<ChatCubit>(context).sendMessage(data: data, email: email);
+        BlocProvider.of<ChatCubit>(context).sendMessage(
+          data: data,
+          email: email,
+        );
       // مسح محتوى TextField بعد الإرسال
       controller.clear();
       // تحريك الشاشة إلى أسفل بعد الإرسال

@@ -1,3 +1,4 @@
+// ignore: file_names
 abstract class AuthState {}
 
 // ignore: camel_case_types

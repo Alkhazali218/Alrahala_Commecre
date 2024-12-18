@@ -4,7 +4,6 @@ import 'package:alrahala_commecre/cubit/Auth%20cubit/Auth_cubit.dart';
 import 'package:alrahala_commecre/cubit/Auth%20cubit/Auth_state.dart';
 import 'package:alrahala_commecre/cubit/chat%20cubit/chat_cubit.dart';
 import 'package:alrahala_commecre/features/chat/Presentation/chat_view.dart';
-import 'package:alrahala_commecre/features/home/Presentation/home_view.dart';
 import 'package:alrahala_commecre/features/login/Presentation/widgets/button_item.dart';
 import 'package:alrahala_commecre/features/login/Presentation/widgets/button_text_item.dart';
 import 'package:alrahala_commecre/features/login/Presentation/widgets/text_from_filed_item.dart';
@@ -33,7 +32,7 @@ class LoginViewBody extends StatelessWidget {
         }
         if (state is AuthSucess) {
           BlocProvider.of<ChatCubit>(context).getMessage();
-          Navigator.pushNamed(context, chatView.id, arguments: email);
+          Navigator.pushNamed(context, chatView.id,arguments: email);
           isLoading = false;
         }
         if (state is AuthError) {

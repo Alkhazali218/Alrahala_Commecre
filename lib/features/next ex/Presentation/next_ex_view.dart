@@ -14,7 +14,7 @@ class NextExView extends StatelessWidget {
         backgroundColor: kcolor,
       foregroundColor: kprimaryColor,
     ),
-    body: NextExViewBody(),
+    body:const NextExViewBody(),
     );
   }
 }

@@ -13,8 +13,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   bool isFirstLaunch = await checkFirstLaunch();
 
   runApp(MyApp(isFirstLaunch: isFirstLaunch));
@@ -38,16 +38,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers:[
-        BlocProvider(create:(context) => AuthCubit()),
-        BlocProvider(create:(context) => ChatCubit()),
+      providers: [
+        BlocProvider(create: (context) => AuthCubit()),
+        BlocProvider(create: (context) => ChatCubit()),
       ],
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(scaffoldBackgroundColor: kprimaryColor),
-        routes: routes,
-        initialRoute: isFirstLaunch ? splashView.id : loginView.id,
-      ),
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(scaffoldBackgroundColor: kprimaryColor),
+          routes: routes,
+          initialRoute: isFirstLaunch ? splashView.id : loginView.id),
     );
   }
 }

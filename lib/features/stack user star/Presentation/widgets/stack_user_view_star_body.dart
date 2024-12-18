@@ -30,7 +30,6 @@ class StackUserViewStarBody extends StatelessWidget {
                     textSupport: 'كشف الحساب',
                     iconSupport: FontAwesomeIcons.list,
                   ),
-                  
                 ],
               ),
               const SizedBox(height: 20),
