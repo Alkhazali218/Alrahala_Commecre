@@ -1,4 +1,5 @@
 import 'package:alrahala_commecre/core/utils/helper/constant.dart';
+import 'package:alrahala_commecre/core/utils/helper/thems.dart';
 import 'package:alrahala_commecre/cubit/chat%20cubit/chat_cubit.dart';
 import 'package:alrahala_commecre/cubit/chat%20cubit/chat_state.dart';
 import 'package:alrahala_commecre/features/chat/Presentation/widgets/chat_buble_for_friend_item.dart';
@@ -21,7 +22,10 @@ class chatViewBody extends StatelessWidget {
         Expanded(
           child: BlocBuilder<ChatCubit, ChatState>(
             builder: (context, state) {
-              var messageList = BlocProvider.of<ChatCubit>(context).messageList;
+              if(state is chatLoading) {
+              return const Center(child: CircularProgressIndicator(color: kpColor));
+              } if(state is chatSucess) {
+                var messageList = BlocProvider.of<ChatCubit>(context).messageList;
               return ListView.builder(
                 reverse: true,
                 controller: _controller,
@@ -32,7 +36,12 @@ class chatViewBody extends StatelessWidget {
                       : chatBubleForFriendItem(message: messageList[index]);
                 },
               );
-            },
+              } else {
+                return Text('حدث خطا في جلب البيانات رجاؤا اعادة المحاولة لاحقا',
+                style: googleFont30,
+                );
+              }
+            } 
           ),
         ),
         Padding(
